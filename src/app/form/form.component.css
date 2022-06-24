@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+min-height: 100vh;
+  background: #fffffff6;
+}
+
+.container {
+  margin-top: 2rem;
+  padding: 1rem 6%;
+  border-radius: 1.2rem;
+  box-shadow: 6rem 6rem 6rem rgba(12, 12, 12, 0.125);
+  background-color: #f0f0f0;
+}
+.form {
+  margin: 40px 0px 20px 0;
+}
+.form :where(input, select) {
+  width: 100%;
+}
+.form .field {
+  position: relative;
+  bottom: 2rem;
+}
+.ui.header {
+  color: #fa9c77;
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+p {
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #2c013d;
+}
+.two.fields {
+  display: flex;
+  justify-content: space-between;
+}
+.two.fields .field {
+  margin-inline-start: -0.3rem;
+}
+.two.fields label {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.4rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+.two.fields select {
+  width: 10rem;
+  height: 3rem;
+  padding: 0.3rem 5%;
+  background: #ffa480f6;
+  border-radius: 0.7rem;
+}
+.two.fields select option {
+  background: #ffa480f6;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+}
+.field {
+  padding: 1rem 2%;
+  /* background: #d1a65531; */
+}
+.field input {
+  background: #ffa480f6;
+  padding: 1rem 9%;
+  height: 3rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.ui.button {
+  position: relative;
+  margin-top: 2rem;
+  background: #fd4b057a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ui.button:hover {
+  background: #ff4e22a6;
+  color: #fff;
+}
+.ui.form .field input.ng-touched.ng-invalid {
+  border: 0.3px solid red;
+  background: rgba(138, 76, 76, 0.664);
+}
+h2 {
+  text-align: center;
+  color: #2c013d;
+}

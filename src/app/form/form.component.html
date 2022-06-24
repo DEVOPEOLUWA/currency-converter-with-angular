@@ -1,0 +1,49 @@
+<body>
+  <div class="container" *ngIf="rates">
+    <fui-toast
+      class="fuitoast"
+      *ngIf="isShowDiv"
+      [showProgress]="'bottom'"
+      [displayTime]="5000"
+      [class]="'error'"
+    >
+      <ng-template style="background:green" fuiToastTitle>Error!</ng-template>
+      <ng-template fuiToastMessage
+        >You have to make the the currenciies ecxhanging different!</ng-template
+      >
+    </fui-toast>
+    <h1 class="ui header">Currency Converter</h1>
+    <div class="form">
+      <div class="field">
+        <p>Enter the amount</p>
+        <input type="number" placeholder="Amount" [(ngModel)]="amount" />
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <div>
+            <label>From</label>
+          </div>
+          <select [(ngModel)]="from" (change)="loadRates()">
+            <option *ngFor="let c of GetAllCurrencies()" [value]="c">
+              {{ c }}
+            </option>
+          </select>
+        </div>
+        <div class="field">
+          <div><label>To</label></div>
+          <select [(ngModel)]="to">
+            <option *ngFor="let c of GetAllCurrencies()" [value]="c">
+              {{ c }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <h2 *ngIf="isShow" [style.display]="amount < 0 ? 'red' : 'purple'">
+        {{ amount.toFixed(2) }} {{ from }} = {{ convert().toFixed(2) }} {{ to }}
+      </h2>
+      <button [disabled]="!amount" (click)="function()" class="fluid ui button">
+        Get Exchange Rates
+      </button>
+    </div>
+  </div>
+</body>
